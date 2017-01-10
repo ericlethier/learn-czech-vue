@@ -1,0 +1,61 @@
+[{
+  "front": "rozhodnutí",
+  "back": "decision"
+}, {
+  "front": "konsenzus",
+  "back": "consensus"
+}, {
+  "front": "domluva",
+  "back": "agreement"
+}, {
+  "front": "obsazený",
+  "back": "full"
+}, {
+  "front": "drobné",
+  "back": "change"
+}, {
+  "front": "světlý",
+  "back": "light"
+}, {
+  "front": "vztah",
+  "back": "relationship"
+}, {
+  "front": "stín",
+  "back": "shadow"
+}, {
+  "front": "chodník",
+  "back": "sidewalk"
+}, {
+  "front": "značka",
+  "back": "brand"
+}, {
+  "front": "nebezpečný",
+  "back": "hazardous"
+}, {
+  "front": "zlý",
+  "back": "evil"
+}, {
+  "front": "vítěz",
+  "back": "winner"
+}, {
+  "front": "hlad",
+  "back": "hungry"
+}, {
+  "front": "žízen",
+  "back": "thirsty"
+}, {
+  "front": "zásoby",
+  "back": "stock"
+}, {
+  "front": "mladší",
+  "back": "younger"
+}, {
+  "front": "starší",
+  "back": "older"
+}, {
+  "front": "těžké",
+  "back": "difficult"
+}, {
+  "front": "vůbec",
+  "back": "at all"
+}]

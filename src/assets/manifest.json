@@ -1,0 +1,16 @@
+{
+  "short_name": "Learn Czech",
+  "name": "Learn Czech with flash cards",
+  "icons": [
+    {
+      "src": "./assets/cz.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#EE6E73",
+  "background_color": "#EE6E73",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
