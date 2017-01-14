@@ -12,7 +12,7 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
-    "space-before-function-paren": ["error", "never"],
+    "space-before-function-paren": [2, { "anonymous": "never", "named": "never" }],
 
     // allow paren-less arrow functions
     'arrow-parens': 0,

@@ -6,7 +6,7 @@
         <div class="column is-half is-offset-one-quarter">
           <errorMessage :alertMsg="alertMsg"></errorMessage>
           <cardSelector></cardSelector>
-          <card :cardListTitle="cardListTitle" :card="currentCard" :isLastCard="isLastCard" :counter="counter" :cardListSize="cards.length"></card>
+          <card :cardListTitle="cardListTitle" :isLastCard="isLastCard" :counter="counter" :cardListSize="cards.length"></card>
         </div>
       </div>
     </div>
@@ -20,14 +20,17 @@
   import FooterBar from './components/FooterBar.vue'
   import Axios from 'axios'
   import eventHub from './EventHub'
+  import store from './components/AppStore.js'
+  import Vuex from 'vuex'
 
   export default {
+    store: store,
+
     data() {
       return {
         counter: 0,
         isLastCard: false,
         cards: [],
-        currentCard: {front: '', back: ''},
         alertMsg: '',
         cardListName: 'vocabulary-data.json'
       }
@@ -53,6 +56,10 @@
     },
 
     methods: {
+      ...Vuex.mapActions([
+        'createCard'
+      ]),
+
       initState() {
         this.isLastCard = false
         this.counter = 0
@@ -63,17 +70,17 @@
         this.initState()
         this.cardListName = selectedCardListName
         Axios.get('./static/data/' + this.cardListName)
-        .then((response) => {
-          this.cards = response.data
-          this.getNextCard()
-        })
-        .catch((err) => {
-          this.alertMsg = err.message
-        })
+          .then((response) => {
+            this.cards = response.data
+            this.getNextCard()
+          })
+          .catch((err) => {
+            this.alertMsg = err.message
+          })
       },
       getNextCard() {
         if ((this.cards.length) > this.counter) {
-          this.currentCard = this.cards[this.counter]
+          this.createCard(this.cards[this.counter])
           this.counter++
         } else {
           this.isLastCard = true
@@ -83,9 +90,9 @@
   }
 
 </script>
-
 <style scoped>
-.border-line {
-   box-shadow: 0 3px 2px lightgrey;
- }
+  .border-line {
+    box-shadow: 0 3px 2px lightgrey;
+  }
+
 </style>
